@@ -46,9 +46,6 @@
             this.datemascota = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.TipoMascotacmb = new System.Windows.Forms.ComboBox();
-            this.BuscarMascotaBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.ModificarMascotaBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.IdClientetxt = new System.Windows.Forms.TextBox();
             this.raxatxt = new System.Windows.Forms.TextBox();
@@ -163,7 +160,7 @@
             this.GuardarMascotaBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarMascotaBtn.Image = ((System.Drawing.Image)(resources.GetObject("GuardarMascotaBtn.Image")));
             this.GuardarMascotaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.GuardarMascotaBtn.Location = new System.Drawing.Point(35, 403);
+            this.GuardarMascotaBtn.Location = new System.Drawing.Point(153, 403);
             this.GuardarMascotaBtn.Name = "GuardarMascotaBtn";
             this.GuardarMascotaBtn.Size = new System.Drawing.Size(69, 54);
             this.GuardarMascotaBtn.TabIndex = 18;
@@ -180,7 +177,7 @@
             this.LIMPIAR.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LIMPIAR.Image = ((System.Drawing.Image)(resources.GetObject("LIMPIAR.Image")));
             this.LIMPIAR.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LIMPIAR.Location = new System.Drawing.Point(343, 403);
+            this.LIMPIAR.Location = new System.Drawing.Point(248, 403);
             this.LIMPIAR.Name = "LIMPIAR";
             this.LIMPIAR.Size = new System.Drawing.Size(69, 54);
             this.LIMPIAR.TabIndex = 19;
@@ -197,7 +194,7 @@
             this.CANCELARBTN.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CANCELARBTN.Image = ((System.Drawing.Image)(resources.GetObject("CANCELARBTN.Image")));
             this.CANCELARBTN.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CANCELARBTN.Location = new System.Drawing.Point(424, 403);
+            this.CANCELARBTN.Location = new System.Drawing.Point(347, 403);
             this.CANCELARBTN.Name = "CANCELARBTN";
             this.CANCELARBTN.Size = new System.Drawing.Size(71, 54);
             this.CANCELARBTN.TabIndex = 20;
@@ -245,57 +242,6 @@
             this.TipoMascotacmb.Size = new System.Drawing.Size(100, 21);
             this.TipoMascotacmb.TabIndex = 24;
             // 
-            // BuscarMascotaBtn
-            // 
-            this.BuscarMascotaBtn.BackColor = System.Drawing.Color.DarkOrange;
-            this.BuscarMascotaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BuscarMascotaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BuscarMascotaBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarMascotaBtn.Image = ((System.Drawing.Image)(resources.GetObject("BuscarMascotaBtn.Image")));
-            this.BuscarMascotaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BuscarMascotaBtn.Location = new System.Drawing.Point(189, 403);
-            this.BuscarMascotaBtn.Name = "BuscarMascotaBtn";
-            this.BuscarMascotaBtn.Size = new System.Drawing.Size(71, 54);
-            this.BuscarMascotaBtn.TabIndex = 25;
-            this.BuscarMascotaBtn.Text = "Buscar";
-            this.BuscarMascotaBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BuscarMascotaBtn.UseVisualStyleBackColor = false;
-            this.BuscarMascotaBtn.Click += new System.EventHandler(this.BuscarMascotaBtn_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkOrange;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(112, 403);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 54);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Eliminar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // ModificarMascotaBtn
-            // 
-            this.ModificarMascotaBtn.BackColor = System.Drawing.Color.DarkOrange;
-            this.ModificarMascotaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ModificarMascotaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ModificarMascotaBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModificarMascotaBtn.Image = ((System.Drawing.Image)(resources.GetObject("ModificarMascotaBtn.Image")));
-            this.ModificarMascotaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ModificarMascotaBtn.Location = new System.Drawing.Point(266, 403);
-            this.ModificarMascotaBtn.Name = "ModificarMascotaBtn";
-            this.ModificarMascotaBtn.Size = new System.Drawing.Size(71, 54);
-            this.ModificarMascotaBtn.TabIndex = 27;
-            this.ModificarMascotaBtn.Text = "Editar";
-            this.ModificarMascotaBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ModificarMascotaBtn.UseVisualStyleBackColor = false;
-            this.ModificarMascotaBtn.Click += new System.EventHandler(this.ModificarMascotaBtn_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -329,9 +275,6 @@
             this.Controls.Add(this.raxatxt);
             this.Controls.Add(this.IdClientetxt);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.ModificarMascotaBtn);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.BuscarMascotaBtn);
             this.Controls.Add(this.TipoMascotacmb);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.datemascota);
@@ -380,9 +323,6 @@
         private System.Windows.Forms.DateTimePicker datemascota;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox TipoMascotacmb;
-        private System.Windows.Forms.Button BuscarMascotaBtn;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button ModificarMascotaBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox IdClientetxt;
         private System.Windows.Forms.TextBox raxatxt;

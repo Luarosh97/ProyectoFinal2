@@ -34,11 +34,6 @@ namespace BLL
             {
                 Conexion.Open();
                 FacturaRepo.Guardar(fact);
-                /*foreach (var item in fact.Detalles)
-                {
-
-                    DetalleRepo.Guardar(item);
-                }*/
                 var id = FacturaRepo.Last();
                 for (int i = 0; i < fact.Detalles.Count; i++)
                 {
@@ -60,8 +55,7 @@ namespace BLL
         public Response Consultar()
         {
             Response = new Response();
-            //RespuestaConsultaServicio respuesta = new RespuestaConsultaServicio();
-            try
+           try
             {
                 Conexion.Open();
                 var facts = FacturaRepo.Consultar();
@@ -98,9 +92,8 @@ namespace BLL
         public Response Buscar(int codigo)
         {
             Response = new Response();
-           //ResponseBusquedaServicio respuesta = new ResponseBusquedaServicio();
-
-            try
+        
+             try
             {
                 Conexion.Open();
                 var Fac = FacturaRepo.Buscar(codigo);

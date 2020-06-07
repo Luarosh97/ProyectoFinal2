@@ -13,7 +13,7 @@ namespace Entity
         public Factura()
         {
             Detalles = new List<DetalleFactura>();
-            PcjDescuento = 0;
+            PcjDescuento = 10;
             PcjGanancia = 30;
             PcjIva = 19;
 
@@ -23,43 +23,12 @@ namespace Entity
             Cliente = cliente;
             Empleado = empleado;
             Detalles = detalles;
-            PcjDescuento = 0;
+            PcjDescuento = 10;
             PcjGanancia = 30;
             PcjIva = 19;
 
         }
-        /* public string IdEmpleado { get; set; }
-         public string IdCliente {get; set;}
-         //public string NroComprobante {get; set;}
-         public DateTime FechaEmision { get; set; }
-         public string Codigo { get; set; }
-         public double Subtotal { get { return detallesFactura.Sum(d => d.ValorTotal); } }
-         public Cliente Cliente { get; set; }
-         public Empleado Empleado { get; set; }
-         public string TipoDocumento { get; set; }       
-         public List<DetalleFactura> detallesFactura { get; set; }
-
-         public void AgregarDetalleFactura(DetalleFactura detalleFactura)
-         {
-              detallesFactura.Add(detalleFactura);
-         }
-
-         public double Descuento
-
-         {
-
-             get { return detallesFactura.Sum(d => d.Descuento); }
-
-         }
-
-
-         public double Total
-         {
-             get
-             {
-                 return (Descuento > 0) ? Subtotal - Descuento : Subtotal;
-             }
-         }*/
+     
 
         public int Codigo { get; set; } 
 
@@ -75,7 +44,7 @@ namespace Entity
 
         public double SubTotal => this.Detalles.Sum(x => x.Servicio.Base);
 
-        public double PcjGanancia { get; set; } //PORCENTAJE DE GANANCIA.
+        public double PcjGanancia { get; set; } 
 
         public double Ganancia => this.SubTotal * this.PcjGanancia / 100; 
 
@@ -83,7 +52,7 @@ namespace Entity
 
         public double Descuento => this.SubTotal * this.PcjDescuento / 100; 
 
-        public int NServicios => this.Detalles.Count; //NUMERO DE SERVICIOS COBRADOS
+        public int NServicios => this.Detalles.Count; 
 
         public double Total => this.SubTotal + this.Iva + this.Ganancia - this.Descuento;
 

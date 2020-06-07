@@ -11,8 +11,7 @@ namespace Entity
         public string Cargo { get; set; }
         public DateTime FechaIngreso {get;set;}
 
-        //ESTE CONSTRUCTOR NO SIGUE LOS ESTANDARES DE CODIGO LIMPIO MAX 3 PARAMETROS
-        public Empleado(string identificacion, string cargo , DateTime fechaIngreso, string cedula, string nombre, string apellidos, string telefono, string correo)
+     public Empleado(string identificacion, string cargo , DateTime fechaIngreso, string cedula, string nombre, string apellidos, string telefono, string correo)
             : base(identificacion,cedula, nombre, apellidos, telefono, correo )
         {
        

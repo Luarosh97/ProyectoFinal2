@@ -95,8 +95,7 @@ namespace DAL
         {
             try
             {
-                //select max(Codigo) from Facturas;
-                SqlDataReader dataReader;
+              SqlDataReader dataReader;
                 using (var command = _connection.CreateCommand())
                 {
                     command.CommandText = "select max(Codigo) as Codigo from Facturas;";
@@ -123,7 +122,7 @@ namespace DAL
             Factura.PcjIva = (double)dataReader["PcjIva"];
             Factura.PcjDescuento = (double)dataReader["PsjDescuento"];
             Factura.PcjGanancia = (double)dataReader["PsjGanancia"];
-            return Factura; //SE DESCARGÖ EL PORTATIL ESPARTE AHí :v
+            return Factura; 
         }
 
     }

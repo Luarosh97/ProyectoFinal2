@@ -47,7 +47,6 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="Mascota.cs" />
-    <Compile Include="Response.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

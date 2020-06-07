@@ -11,7 +11,7 @@ namespace Entity
       public DateTime FechaRegistro {get;set;}
       public IList<Mascota> mascotas {get;set;}
         
-        //ESTE CONSTRUCTOR NO SIGUE LOS ESTANDARES DE CODIGO LIMPIO MAX 3 PARAMETROS
+     
         public Cliente(DateTime fechaRegistro, string identificacion, string nombre, string apellidos, string telefono, string correo, string direccion)
             :base( identificacion,nombre, apellidos, telefono, correo,direccion)
         {

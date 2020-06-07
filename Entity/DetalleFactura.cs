@@ -13,12 +13,6 @@ namespace Entity
         public Servicio Servicio { get; set; }      
         public Mascota Mascota { get; set; }
 
-        /*public DetalleFactura()
-        {
-            this.Factura = "";
-            this.Servicio = new Servicio();
-            this.Mascota = new Mascota();
-        }*/
 
         public DetalleFactura(Servicio servicios, Mascota mascota)
         {
