@@ -37,8 +37,7 @@ namespace BLL
                 var id = FacturaRepo.Last();
                 for (int i = 0; i < fact.Detalles.Count; i++)
                 {
-                    Console.WriteLine("Codigo de factura: "+id);
-                    fact.Detalles[i].Factura = id;
+                   fact.Detalles[i].Factura = id;
                     DetalleRepo.Guardar(fact.Detalles[i]);
                 }
                 Conexion.Close();

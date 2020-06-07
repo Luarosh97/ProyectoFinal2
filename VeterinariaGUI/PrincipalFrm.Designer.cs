@@ -47,6 +47,8 @@
             this.CerrarBtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.LblHora = new System.Windows.Forms.Label();
+            this.LblFecha = new System.Windows.Forms.Label();
             MenuVertical = new System.Windows.Forms.Panel();
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +68,8 @@
             // 
             MenuVertical.AutoScroll = true;
             MenuVertical.BackColor = System.Drawing.Color.MediumSeaGreen;
+            MenuVertical.Controls.Add(this.LblFecha);
+            MenuVertical.Controls.Add(this.LblHora);
             MenuVertical.Controls.Add(this.button2);
             MenuVertical.Controls.Add(this.pictureBox1);
             MenuVertical.Controls.Add(this.ServiciosBtn);
@@ -208,7 +212,7 @@
             this.Logo.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.Logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(92, 0);
+            this.Logo.Location = new System.Drawing.Point(110, 3);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(231, 155);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -277,6 +281,28 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // LblHora
+            // 
+            this.LblHora.Font = new System.Drawing.Font("Showcard Gothic", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHora.ForeColor = System.Drawing.Color.White;
+            this.LblHora.Location = new System.Drawing.Point(97, 527);
+            this.LblHora.Name = "LblHora";
+            this.LblHora.Size = new System.Drawing.Size(244, 48);
+            this.LblHora.TabIndex = 11;
+            this.LblHora.Text = "Hora";
+            this.LblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblFecha
+            // 
+            this.LblFecha.Font = new System.Drawing.Font("Showcard Gothic", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.ForeColor = System.Drawing.Color.White;
+            this.LblFecha.Location = new System.Drawing.Point(3, 463);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(435, 55);
+            this.LblFecha.TabIndex = 23;
+            this.LblFecha.Text = "Fecha";
+            this.LblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // from
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,8 +354,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox4;
-       
-      
+        private System.Windows.Forms.Label LblHora;
+        private System.Windows.Forms.Label LblFecha;
 
         public object Timer { get; private set; }
     }

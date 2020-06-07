@@ -19,7 +19,8 @@ namespace VeterinariaGUI
         private ClienteService Clientes;
         private ServiciosService Servicios;
         private Empleado Empleado;
-        private FacturaService Facturas;//EMPLEADO ES RECIBIDO POR EL CONTRUCTOR CUANDO LO INSTANCIA EL LOGIN
+        private FacturaService Facturas;
+        private Timer ti;
 
         private string connectionString;
 
@@ -40,8 +41,11 @@ namespace VeterinariaGUI
             Empleado.Direccion = "Por ahí";
             Empleado.FechaIngreso = new DateTime().Date;
             Empleado.Telefono = "#";
-            //// SIMULA USUARIO LOGEADO
-            InitializeComponent();
+            ti = new Timer();
+            ti.Tick += new EventHandler(eventoTimer);
+           InitializeComponent();
+            ti.Enabled = true;
+
         }
 
         private void CerrarBtn_Click(object sender, EventArgs e)
@@ -92,6 +96,15 @@ namespace VeterinariaGUI
             FacturarServicioFrm.Show();
         }
 
-        
-    }
-}
+        private void eventoTimer(Object sender, EventArgs e)
+        {
+            DateTime Hoy = DateTime.Now;
+            LblHora.Text = Hoy.ToString("hh:mm:ss tt");
+            LblFecha.Text= DateTime.Now.ToLongDateString();
+
+        }
+
+        }
+
+        }
+
