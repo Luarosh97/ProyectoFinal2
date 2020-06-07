@@ -31,14 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.codigoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,9 +52,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.codigoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -84,33 +84,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // baseDataGridViewTextBoxColumn
-            // 
-            this.baseDataGridViewTextBoxColumn.DataPropertyName = "Base";
-            this.baseDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.baseDataGridViewTextBoxColumn.Name = "baseDataGridViewTextBoxColumn";
-            this.baseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.baseDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // servicioBindingSource
-            // 
-            this.servicioBindingSource.DataSource = typeof(Entity.Servicio);
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -128,29 +101,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(448, 334);
             this.dataGridView2.TabIndex = 1;
             // 
-            // codigoDataGridViewTextBoxColumn1
-            // 
-            this.codigoDataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn1.Name = "codigoDataGridViewTextBoxColumn1";
-            this.codigoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn1.Width = 190;
-            // 
-            // baseDataGridViewTextBoxColumn1
-            // 
-            this.baseDataGridViewTextBoxColumn1.DataPropertyName = "Base";
-            this.baseDataGridViewTextBoxColumn1.HeaderText = "Valor";
-            this.baseDataGridViewTextBoxColumn1.Name = "baseDataGridViewTextBoxColumn1";
-            this.baseDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.baseDataGridViewTextBoxColumn1.Width = 120;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(842, 447);
@@ -164,20 +114,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 25);
+            this.label1.Size = new System.Drawing.Size(124, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "Servicios";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(481, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 25);
+            this.label2.Size = new System.Drawing.Size(158, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Pre Factura";
             // 
@@ -203,10 +153,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 25);
+            this.label5.Size = new System.Drawing.Size(99, 27);
             this.label5.TabIndex = 7;
             this.label5.Text = "Cliente";
             // 
@@ -221,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(105, 33);
+            this.label6.Location = new System.Drawing.Point(131, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 9;
@@ -229,7 +179,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;            
+            this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(335, 60);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(135, 21);
@@ -332,6 +282,56 @@
             this.label14.TabIndex = 21;
             this.label14.Text = "Empleado_Nombre";
             // 
+            // codigoDataGridViewTextBoxColumn1
+            // 
+            this.codigoDataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn1.Name = "codigoDataGridViewTextBoxColumn1";
+            this.codigoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn1.Width = 190;
+            // 
+            // baseDataGridViewTextBoxColumn1
+            // 
+            this.baseDataGridViewTextBoxColumn1.DataPropertyName = "Base";
+            this.baseDataGridViewTextBoxColumn1.HeaderText = "Valor";
+            this.baseDataGridViewTextBoxColumn1.Name = "baseDataGridViewTextBoxColumn1";
+            this.baseDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.baseDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // servicioBindingSource
+            // 
+            this.servicioBindingSource.DataSource = typeof(Entity.Servicio);
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // baseDataGridViewTextBoxColumn
+            // 
+            this.baseDataGridViewTextBoxColumn.DataPropertyName = "Base";
+            this.baseDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.baseDataGridViewTextBoxColumn.Name = "baseDataGridViewTextBoxColumn";
+            this.baseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.baseDataGridViewTextBoxColumn.Width = 120;
+            // 
             // Facturacioncs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,8 +363,8 @@
             this.Name = "Facturacioncs";
             this.Text = "Facturacioncs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(servicioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
