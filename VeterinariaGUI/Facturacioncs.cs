@@ -60,19 +60,10 @@ namespace VeterinariaGUI
             }
 
 
-                    
-                    //ESTO CUANDO LO EJECUTEN CON AL BD FUNCIONAL
-
-            //SIMULACION DE CONSULTA DE SERVICIOS
-            //servicios = new List<Servicio>();
-            ////servicios.Add(new Servicio(1,"Pedicure",20000));
-            //servicios.Add(new Servicio(2,"Corte de pelo", 30000));
-            //dataGridView1.DataSource = servicios;
+                  
             dataGridView2.DataSource = this.seleccion;
-            //FIN SIMULACION
-
-            
-        }
+           
+}
 
         private void PintarSeleccionados(List<Servicio> s)
         {
@@ -82,8 +73,7 @@ namespace VeterinariaGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //SE INSTANCIA O COMPLETA EL OBJETO Y SE MANDA A BLL
-            if (this.Factura.Detalles.Count > 0)
+           if (this.Factura.Detalles.Count > 0)
             {
                 var Fac = this.Factura;
                 this.Factura = new Factura();
@@ -142,8 +132,7 @@ namespace VeterinariaGUI
             }
 
             var row = dataGridView1.CurrentRow;
-            //MessageBox.Show(row.Cells[0].RowIndex+"");
-            var servicio = servicios[row.Cells[0].RowIndex];
+           var servicio = servicios[row.Cells[0].RowIndex];
 
             this.seleccion.Add(servicio);
             this.PintarSeleccionados(this.seleccion);
@@ -168,19 +157,10 @@ namespace VeterinariaGUI
                 var Crta = this.Clientes.Buscar(textBox1.Text.Trim());
                 if (!Crta.Error)
                 {
-                    //MessageBox.Show(Crta.cliente.mascotas[0].NombreMascota);
                     this.ClienteCmabiado(Crta.cliente);
-                }  //ESTO CUANDO LO EJECUTEN CON AL BD FUNCIONAL
+                }  
 
-                //SIMULACION DE CLIENTE ENCONTRADO
-                //this.Cliente = new Cliente();
-                //Cliente.mascotas.Add(new Mascota(2,"Firulais"));
-               // Cliente.mascotas.Add(new Mascota(2, "Roberto"));
-               // Cliente.Nombre = "Raul José";
-               // Cliente.Apellido = "Díaz Obrador";
-               // Cliente.Identificacion = "1";
-                //this.ClienteCmabiado(Cliente);
-                //FIN SIMULCION
+              
             }
         }
 
@@ -191,24 +171,20 @@ namespace VeterinariaGUI
             var i = 0;
             comboBox1.Items.Clear();
 
-            /*this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2"});*/
-
             var range = new string[c.mascotas.Count];
 
             foreach (var item in c.mascotas)
             {
                 range[i] = item.NombreMascota;
-               // comboBox1.Items.Insert(i,item.NombreMascota);
+               
                 i++;
             }
-            //this.comboBox1.Items.Add('1');
+          
             this.comboBox1.Items.AddRange(range);
 
             if (comboBox1.Items.Count>0)
                 comboBox1.SelectedIndex = 0;
-            //comboBox1.DataSource = c.mascotas.ToList();
+           
         }
 
         private void textBox2_TextChanged(object sender, KeyPressEventArgs e)

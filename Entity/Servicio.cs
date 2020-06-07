@@ -10,8 +10,7 @@ namespace Entity
     {
         public int Codigo {get;set;}
         public string Nombre {get; set;}
-        //public string Desc { get; set; } //DESCRIPCION DEL SERVICIO
-        public double Base {get;set;} //PRECIO BASE DEL SERVICIO
+         public double Base {get;set;} 
        
   
         public Servicio()
@@ -19,23 +18,20 @@ namespace Entity
             this.Base = 0;
             this.Codigo = 0;
             this.Nombre = "";
-            //this.Desc = "";
-        }
+          }
 
         public Servicio(int Codigo)
         {
             this.Base = 0;
             this.Codigo = Codigo;
             this.Nombre = "";
-            //this.Desc = "";
-        }
+           }
 
         public Servicio(string nombre, double valor)
         { 
-            this.Codigo = 0; //SE AUTOGENERA EN DB
+            this.Codigo = 0; 
             this.Nombre = nombre;
-           // this.Desc = descripcion;
-            this.Base = valor;
+          this.Base = valor;
         }
 
         public Servicio(int codigo, string nombre, double valor)
