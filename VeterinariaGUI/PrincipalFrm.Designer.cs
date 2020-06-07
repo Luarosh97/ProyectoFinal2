@@ -89,7 +89,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(158, 449);
+            this.button2.Location = new System.Drawing.Point(158, 407);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 39);
             this.button2.TabIndex = 22;
@@ -100,7 +100,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(92, 449);
+            this.pictureBox1.Location = new System.Drawing.Point(92, 407);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +113,7 @@
             this.ServiciosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ServiciosBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ServiciosBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ServiciosBtn.Location = new System.Drawing.Point(158, 376);
+            this.ServiciosBtn.Location = new System.Drawing.Point(158, 345);
             this.ServiciosBtn.Name = "ServiciosBtn";
             this.ServiciosBtn.Size = new System.Drawing.Size(172, 39);
             this.ServiciosBtn.TabIndex = 20;
@@ -124,7 +124,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(92, 376);
+            this.pictureBox6.Location = new System.Drawing.Point(92, 345);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(42, 39);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -134,7 +134,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(92, 183);
+            this.pictureBox3.Location = new System.Drawing.Point(92, 172);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(42, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,7 +144,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(92, 249);
+            this.pictureBox2.Location = new System.Drawing.Point(92, 230);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(42, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +157,7 @@
             this.PasientesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.PasientesBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasientesBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PasientesBtn.Location = new System.Drawing.Point(158, 249);
+            this.PasientesBtn.Location = new System.Drawing.Point(158, 230);
             this.PasientesBtn.Name = "PasientesBtn";
             this.PasientesBtn.Size = new System.Drawing.Size(172, 39);
             this.PasientesBtn.TabIndex = 14;
@@ -171,7 +171,7 @@
             this.ClienteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ClienteBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClienteBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClienteBtn.Location = new System.Drawing.Point(158, 183);
+            this.ClienteBtn.Location = new System.Drawing.Point(158, 172);
             this.ClienteBtn.Name = "ClienteBtn";
             this.ClienteBtn.Size = new System.Drawing.Size(172, 39);
             this.ClienteBtn.TabIndex = 13;
@@ -185,7 +185,7 @@
             this.VeterinariosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.VeterinariosBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VeterinariosBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.VeterinariosBtn.Location = new System.Drawing.Point(158, 310);
+            this.VeterinariosBtn.Location = new System.Drawing.Point(158, 287);
             this.VeterinariosBtn.Name = "VeterinariosBtn";
             this.VeterinariosBtn.Size = new System.Drawing.Size(172, 39);
             this.VeterinariosBtn.TabIndex = 10;
@@ -196,7 +196,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(92, 310);
+            this.pictureBox5.Location = new System.Drawing.Point(92, 287);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(42, 39);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +292,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "from";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.from_Load);
             MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -329,6 +328,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox4;
+       
       
 
         public object Timer { get; private set; }

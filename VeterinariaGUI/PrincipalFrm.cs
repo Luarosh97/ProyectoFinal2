@@ -60,10 +60,7 @@ namespace VeterinariaGUI
             menuVeterinarioFrm.Show();
         }
 
-        private void from_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void CitasBtn_Click(object sender, EventArgs e)
         {
