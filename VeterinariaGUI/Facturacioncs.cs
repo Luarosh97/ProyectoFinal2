@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
 using Entity;
 using BLL;
 
@@ -20,18 +20,22 @@ namespace VeterinariaGUI
         private FacturaService Facturas;
         private Empleado Empleado;
         private Cliente Cliente;
+      
+      
 
         private Factura Factura;
         private DetalleFactura Detalle;
         private List<DetalleFactura> Detalles;
         private List<Servicio> servicios;
         private List<Servicio> seleccion;
+        private MascotaService mascotas;
 
         public Facturacioncs(
             ClienteService _Clientes, 
             ServiciosService _Servicios, 
             FacturaService _Facturas, 
-            Empleado _Empleado)
+            Empleado _Empleado
+            )             
         {
             seleccion = new List<Servicio>();
             Detalles = new List<DetalleFactura>();
@@ -40,9 +44,20 @@ namespace VeterinariaGUI
             Servicios = _Servicios;
             Empleado = _Empleado;
             Facturas = _Facturas;
+            var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
+            Facturas = _Facturas;
             InitializeComponent();
             this.PreCharge();
         }
+
+     
+
+        public Facturacioncs(FacturaService facturas)
+        {
+            Facturas = facturas;
+        }
+
+        
 
         private void PreCharge()
         {
@@ -83,8 +98,8 @@ namespace VeterinariaGUI
             else
             {
                 MessageBox.Show("Agrega algún servicio");
-            }  
-
+            }
+    
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -253,5 +268,12 @@ namespace VeterinariaGUI
                 label13.Text = Factura.Total + "";
             }
         }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+     
     }
 }

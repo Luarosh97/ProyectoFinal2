@@ -24,6 +24,7 @@ namespace VeterinariaGUI
         string TotalPerros;
         string TotalGatos;
         string TotalLoros;
+        private MascotaService mascotas;
 
         public MenuMascotasFrm()
         {
@@ -31,6 +32,8 @@ namespace VeterinariaGUI
             mascotaService = new MascotaService(connectionString);
             InitializeComponent();
         }
+
+      
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -112,6 +115,11 @@ namespace VeterinariaGUI
             TotalLorostxt.Text = TotalLoros;
             TotalGatostxt.Text = TotalGatos;
             totaltxt.Text = Total;
+        }
+
+        private void CANCELARBTN_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

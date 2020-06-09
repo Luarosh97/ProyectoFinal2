@@ -45,8 +45,9 @@ namespace DAL
             SqlDataReader dataReader;
             List<Factura> facturas = new List<Factura>();
             using (var command = _connection.CreateCommand())
-            {
+            {    
                 command.CommandText = "Select * from Facturas";
+              
                 dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
@@ -73,23 +74,9 @@ namespace DAL
             }
         }
 
-        public void Eliminar(int id)
-        {
-            try
-            {
-                using (var command = _connection.CreateCommand())
-                {
-                    command.CommandText = "Delete from Facturas where Codigo=@Codigo";
-                    command.Parameters.AddWithValue("@Codigo", id);
-                    command.ExecuteNonQuery();
-                }
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-        }
+
+
 
         public int Last()
         {
@@ -110,6 +97,7 @@ namespace DAL
             }
         }
 
+       
 
         private Factura MapearFactura(SqlDataReader dataReader)
         {
@@ -124,6 +112,9 @@ namespace DAL
             Factura.PcjGanancia = (double)dataReader["PsjGanancia"];
             return Factura; 
         }
+
+
+       
 
     }
 }

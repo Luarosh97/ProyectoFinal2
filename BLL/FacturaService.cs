@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using DAL;
 using Entity;
 
@@ -16,8 +15,9 @@ namespace BLL
         private readonly DetalleRepository DetalleRepo;
         private readonly ClienteRepository ClienteRepo;
         private readonly EmpleadoRepository EmpleadoRepo;
-
         private Response Response;
+
+
 
         public FacturaService(string _conection)
         {
@@ -30,9 +30,11 @@ namespace BLL
 
         public string Guardar(Factura fact)
         {
+     
             try
             {
                 Conexion.Open();
+                
                 FacturaRepo.Guardar(fact);
                 var id = FacturaRepo.Last();
                 for (int i = 0; i < fact.Detalles.Count; i++)
@@ -50,22 +52,21 @@ namespace BLL
             }
 
         }
-
         public Response Consultar()
         {
             Response = new Response();
-           try
+            try
             {
                 Conexion.Open();
                 var facts = FacturaRepo.Consultar();
                 for (int i = 0; i < facts.Count; i++)
                 {
-                    facts[i].Detalles = (List<DetalleFactura>) DetalleRepo.BuscarFac(facts[i].Codigo);
+                    facts[i].Detalles = (List<DetalleFactura>)DetalleRepo.BuscarFac(facts[i].Codigo);
                 }
-                Response.Objeto = facts;
+                Response.facturas = facts;
                 Conexion.Close();
 
-                if (((IList<Factura>)Response.Objeto).Count > 0)
+                if (Response.facturas.Count > 0)
                 {
                     Response.Mensaje = "Se consultan los Datos";
                 }
@@ -91,8 +92,8 @@ namespace BLL
         public Response Buscar(int codigo)
         {
             Response = new Response();
-        
-             try
+
+            try
             {
                 Conexion.Open();
                 var Fac = FacturaRepo.Buscar(codigo);
@@ -101,10 +102,10 @@ namespace BLL
                 Fac.Cliente = ClienteRepo.Buscar(Fac.Cliente.Identificacion);
                 Fac.Empleado = EmpleadoRepo.Buscar(Fac.Empleado.Identificacion);
 
-                Response.Objeto = FacturaRepo.Buscar(codigo);
+                Response.factura= FacturaRepo.Buscar(codigo);
 
                 Conexion.Close();
-                Response.Mensaje = (Response.Objeto != null) ? "Se encontró la factura solicitada" : $"La factura {codigo} no existe";
+                Response.Mensaje = (Response.factura!= null) ? "Se encontró la factura solicitada" : $"La factura {codigo} no existe";
                 Response.Error = false;
                 return Response;
             }
@@ -117,24 +118,9 @@ namespace BLL
             }
         }
 
-        public string Eliminar(int codigo)
-        {
-            try
-            {
-                Conexion.Open();
-                DetalleRepo.Eliminar(codigo);
-                FacturaRepo.Eliminar(codigo);
-                Conexion.Close();
-                return ($"La factura {codigo} se ha eliminado satisfactoriamente.");
-            }
-            catch (Exception e)
-            {
-                Conexion.Close();
-                return $"Error de la Aplicación: {e.Message}";
-            }
-        
-        }
-
 
     }
-}
+
+        }
+
+ 

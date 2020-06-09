@@ -12,6 +12,8 @@ namespace BLL
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }
-        public Object Objeto { get; set; }
+        public IList <Factura> facturas{ get; set; }
+        public Factura factura { get; set; }
+        
     }
 }

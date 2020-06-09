@@ -18,6 +18,8 @@ namespace VeterinariaGUI
         ServiciosService servicioservice;
         RespuestaConsultaServicio respuestaservicio = new RespuestaConsultaServicio();
         string TotalServiciosGenerales;
+       
+
         public MenuServiciosFrm()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
@@ -25,6 +27,8 @@ namespace VeterinariaGUI
 
             InitializeComponent();
         }
+
+       
 
         private void MinimizarBtn_Click(object sender, EventArgs e)
         {
@@ -69,6 +73,16 @@ namespace VeterinariaGUI
         private void Llenar()
         {
             TotalServiciostxt.Text = TotalServiciosGenerales;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CANCELARBTN_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

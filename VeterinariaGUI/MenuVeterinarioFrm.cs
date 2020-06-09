@@ -17,12 +17,18 @@ namespace VeterinariaGUI
     {
         EmpleadoService empleadoService;
         ResponseEmpleado respuestaConsulta = new ResponseEmpleado();
+        private Empleado empleado;
 
         public MenuVeterinarioFrm()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
             empleadoService = new EmpleadoService(connectionString);
             InitializeComponent();
+        }
+
+        public MenuVeterinarioFrm(Empleado empleado)
+        {
+            this.empleado = empleado;
         }
 
         private void AgregarVeterinarioBtn_Click(object sender, EventArgs e)
@@ -92,6 +98,11 @@ namespace VeterinariaGUI
                 VeterinarioDtg.DataSource = empleadoService.ConsultarXFecha(fecha);
 
             }
+        }
+
+        private void CANCELARBTN_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

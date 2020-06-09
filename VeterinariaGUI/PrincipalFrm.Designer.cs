@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MinimizarBtn = new System.Windows.Forms.PictureBox();
             this.CerrarBtn = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.LblHora = new System.Windows.Forms.Label();
             this.LblFecha = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,14 +263,14 @@
             this.CerrarBtn.TabStop = false;
             this.CerrarBtn.Click += new System.EventHandler(this.CerrarBtn_Click);
             // 
-            // panel1
+            // panelContenedor
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Location = new System.Drawing.Point(441, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(859, 615);
-            this.panel1.TabIndex = 2;
+            this.panelContenedor.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelContenedor.Controls.Add(this.pictureBox4);
+            this.panelContenedor.Location = new System.Drawing.Point(441, 35);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(859, 615);
+            this.panelContenedor.TabIndex = 2;
             // 
             // pictureBox4
             // 
@@ -310,7 +310,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1300, 650);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(MenuVertical);
             this.Controls.Add(this.BarraTitulo);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -329,7 +329,7 @@
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
@@ -352,7 +352,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label LblHora;
         private System.Windows.Forms.Label LblFecha;

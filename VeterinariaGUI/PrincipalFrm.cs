@@ -20,18 +20,20 @@ namespace VeterinariaGUI
         private ServiciosService Servicios;
         private Empleado Empleado;
         private FacturaService Facturas;
+        private MascotaService Mascotas;
         private Timer ti;
-
-        private string connectionString;
+       private string connectionString;
 
 
         public from()
         {
             this.connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
-            this.Clientes = new ClienteService(this.connectionString);
+            
             this.Servicios = new ServiciosService(this.connectionString);
             this.Facturas = new FacturaService(this.connectionString);
-            this.Empleado = new Empleado();
+            this.Mascotas = new MascotaService(this.connectionString);
+            this.Clientes = new ClienteService(this.connectionString);
+             this.Empleado = new Empleado();
             ////
             Empleado.Identificacion = "12892";
             Empleado.Cargo = "Peluquero";
@@ -71,29 +73,36 @@ namespace VeterinariaGUI
           
          
         }
+        
 
         private void ClienteBtn_Click(object sender, EventArgs e)
         {
-            MenuClientesFrm menuClientesFrm = new MenuClientesFrm(Clientes);
+            MenuClientesFrm menuClientesFrm = new MenuClientesFrm();
             menuClientesFrm.Show();
-        }
+ }
 
         private void PasientesBtn_Click(object sender, EventArgs e)
+
         {
             MenuMascotasFrm menuMascotasFrm = new MenuMascotasFrm();
             menuMascotasFrm.Show();
+
         }
 
         private void ServiciosBtn_Click(object sender, EventArgs e)
         {
             MenuServiciosFrm ServicioFrm = new MenuServiciosFrm();
-           ServicioFrm.Show();
+            ServicioFrm.Show();
         }
 
+
+
         private void button2_Click(object sender, EventArgs e)
-        {   //FacturarServiciosFrm FacturarServicioFrm = new FacturarServiciosFrm();
+        {  
             Facturacioncs FacturarServicioFrm = new Facturacioncs(this.Clientes, this.Servicios,this.Facturas, this.Empleado);
             FacturarServicioFrm.Show();
+            
+
         }
 
         private void eventoTimer(Object sender, EventArgs e)

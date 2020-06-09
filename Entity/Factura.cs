@@ -40,21 +40,32 @@ namespace Entity
 
         public double PcjIva { get; set; }
 
-        public double Iva => this.SubTotal * this.PcjIva / 100;
+        public double Iva
+        {
+            get
+            {
+                return this.SubTotal * this.PcjIva / 100;
+            }
+        }
 
-        public double SubTotal => this.Detalles.Sum(x => x.Servicio.Base);
+        public double SubTotal { get { return this.Detalles.Sum(x => x.Servicio.Base); } }
 
         public double PcjGanancia { get; set; } 
 
-        public double Ganancia => this.SubTotal * this.PcjGanancia / 100; 
+        public double Ganancia
+        {   get
+            {
+                return  this.SubTotal * this.PcjGanancia / 100;
+            }
+        } 
 
         public double PcjDescuento { get; set; }
 
-        public double Descuento => this.SubTotal * this.PcjDescuento / 100; 
+        public double Descuento { get{ return this.SubTotal * this.PcjDescuento / 100; }}
 
-        public int NServicios => this.Detalles.Count; 
+        public int NServicios { get { return this.Detalles.Count; } }
 
-        public double Total => this.SubTotal + this.Iva + this.Ganancia - this.Descuento;
+        public double Total { get { return  this.SubTotal + this.Iva + this.Ganancia - this.Descuento; } }
 
         public override string ToString()
         {

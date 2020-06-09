@@ -20,12 +20,11 @@ namespace VeterinariaGUI
 
         ResponseClienteConsulta respuestaConsulta = new ResponseClienteConsulta();
        
-        public MenuClientesFrm(ClienteService _Cs)
+        public MenuClientesFrm()
         {
-            //ESTO DEBE SER INGRESADO POR EL CONSTRUCTOR DESDE EL FORMULARIO PRINCIPAL PARA EVITAR MULTIPLES INSTANCIAS
+           
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
-            clienteservice = _Cs;
-            //clienteservice = new ClienteService(connectionString);
+            clienteservice = new ClienteService(connectionString);
             InitializeComponent();
         }
 
@@ -95,6 +94,11 @@ namespace VeterinariaGUI
                 DateTime fecha = DateFechaClientes.Value.Date;
                 dataGridView1.DataSource = clienteservice.ConsultarXFecha(fecha);
             }
+        }
+
+        private void CANCELARBTN_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
