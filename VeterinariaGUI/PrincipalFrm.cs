@@ -99,7 +99,7 @@ namespace VeterinariaGUI
 
         private void button2_Click(object sender, EventArgs e)
         {  
-            Facturacioncs FacturarServicioFrm = new Facturacioncs(this.Clientes, this.Servicios,this.Facturas, this.Empleado);
+            FacturacionsFrm FacturarServicioFrm = new FacturacionsFrm(this.Clientes, this.Servicios,this.Facturas, this.Empleado);
             FacturarServicioFrm.Show();
             
 

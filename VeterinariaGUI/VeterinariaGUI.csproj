@@ -63,11 +63,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacioncs.cs">
+    <Compile Include="FacturacionsFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacioncs.Designer.cs">
-      <DependentUpon>Facturacioncs.cs</DependentUpon>
+    <Compile Include="FacturacionsFrm.Designer.cs">
+      <DependentUpon>FacturacionsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuFacturasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFacturasFrm.Designer.cs">
+      <DependentUpon>MenuFacturasFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuMascotasFrm.cs">
       <SubType>Form</SubType>
@@ -125,8 +131,11 @@
     <Compile Include="RegistroClienteFrm.Designer.cs">
       <DependentUpon>RegistroClienteFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Facturacioncs.resx">
-      <DependentUpon>Facturacioncs.cs</DependentUpon>
+    <EmbeddedResource Include="FacturacionsFrm.resx">
+      <DependentUpon>FacturacionsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFacturasFrm.resx">
+      <DependentUpon>MenuFacturasFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuMascotasFrm.resx">
       <DependentUpon>MenuMascotasFrm.cs</DependentUpon>

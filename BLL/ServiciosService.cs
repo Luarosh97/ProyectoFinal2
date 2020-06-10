@@ -144,10 +144,10 @@ namespace BLL
 
         }
 
-        public double SumarServicios()
+        public decimal SumarServicios()
         {
             conexion.Open();
-            double ValorTotal = serviciorepositorio.SumarValorServicios();
+           decimal ValorTotal = serviciorepositorio.SumarValorServicios();
             conexion.Close();
             return ValorTotal;
         }

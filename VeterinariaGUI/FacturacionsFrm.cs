@@ -6,18 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 using System.Configuration;
 using Entity;
 using BLL;
 
 namespace VeterinariaGUI
 {
-    public partial class Facturacioncs : Form
+    public partial class FacturacionsFrm : Form
     {
-        private ClienteService Clientes;
+        private ClienteService ClienteService;
         private ServiciosService Servicios;
-        private FacturaService Facturas;
+        private FacturaService FacturaService;
         private Empleado Empleado;
         private Cliente Cliente;
       
@@ -30,52 +30,50 @@ namespace VeterinariaGUI
         private List<Servicio> seleccion;
         private MascotaService mascotas;
 
-        public Facturacioncs(
+        public FacturacionsFrm(
             ClienteService _Clientes, 
             ServiciosService _Servicios, 
-            FacturaService _Facturas, 
+            FacturaService _facturaService, 
             Empleado _Empleado
             )             
         {
             seleccion = new List<Servicio>();
             Detalles = new List<DetalleFactura>();
-            Factura = new Factura();
-            Clientes = _Clientes;
+       
+            ClienteService = _Clientes;
             Servicios = _Servicios;
             Empleado = _Empleado;
-            Facturas = _Facturas;
+            FacturaService = _facturaService;
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
-            Facturas = _Facturas;
+            FacturaService = _facturaService;
             InitializeComponent();
             this.PreCharge();
         }
 
      
 
-        public Facturacioncs(FacturaService facturas)
+        public FacturacionsFrm(FacturaService facturas)
         {
-            Facturas = facturas;
+            FacturaService = facturas;
         }
 
         
 
         private void PreCharge()
-        {
-            textBox2.Text = this.Factura.PcjIva + "";
-            textBox3.Text = this.Factura.PcjGanancia + "";
-            textBox4.Text = this.Factura.PcjDescuento + "";
+        {  // Hacer un servicio que consulte los valores en BD y luego se mapea esos valores en los textos
+            textBox2.Text = 19 + "";
+            textBox3.Text = 30+"";
+            textBox4.Text = 10 + "";
             label14.Text = this.Empleado.NombreCompleto();
-            var Srta = this.Servicios.Consultar();
-            if (Srta.Error)
-                MessageBox.Show(Srta.Mensaje);
+            var respuesta = this.Servicios.Consultar();
+            if (respuesta.Error)
+                MessageBox.Show(respuesta.Mensaje);
             else
             {
-                dataGridView1.DataSource = Srta.servicios;
-                this.servicios = (List<Servicio>)Srta.servicios;
+                dataGridView1.DataSource = respuesta.servicios;
+                this.servicios = (List<Servicio>)respuesta.servicios;
             }
-
-
-                  
+   
             dataGridView2.DataSource = this.seleccion;
            
 }
@@ -88,12 +86,12 @@ namespace VeterinariaGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-           if (this.Factura.Detalles.Count > 0)
+           if (this.Factura.ConsultarDetalles().Count > 0)
             {
                 var Fac = this.Factura;
-                this.Factura = new Factura();
-                MessageBox.Show(Fac.ToString());
-                MessageBox.Show(this.Facturas.Guardar(Fac));
+                Fac.CalcularSubtotal();
+                MessageBox.Show(Fac.ToString()); 
+                MessageBox.Show(this.FacturaService.Guardar(Fac));
             }
             else
             {
@@ -112,7 +110,7 @@ namespace VeterinariaGUI
 
             try
             {
-                Factura.PcjDescuento = Math.Abs(Double.Parse(textBox4.Text));
+                Factura.PcjDescuento = Math.Abs(decimal.Parse(textBox4.Text));
                 textBox4.Text = Factura.PcjDescuento + "";
             }
             catch (Exception)
@@ -124,7 +122,7 @@ namespace VeterinariaGUI
 
             try
             {
-                Factura.PcjIva = Math.Abs(Double.Parse(textBox2.Text));
+                Factura.PcjIva = Math.Abs(decimal.Parse(textBox2.Text));
                 textBox2.Text = Factura.PcjIva + "";
             }
             catch (Exception)
@@ -136,7 +134,7 @@ namespace VeterinariaGUI
 
             try
             {
-                Factura.PcjGanancia = Math.Abs(Double.Parse(textBox3.Text));
+                Factura.PcjGanancia = Math.Abs(decimal.Parse(textBox3.Text));
                 textBox3.Text = Factura.PcjGanancia + "";
             }
             catch (Exception)
@@ -153,13 +151,10 @@ namespace VeterinariaGUI
             this.PintarSeleccionados(this.seleccion);
 
             var Mascota = this.Cliente.mascotas[comboBox1.SelectedIndex];
-            this.Detalle = new DetalleFactura(servicio, Mascota);
-            this.Detalles.Add(this.Detalle);
-
+            Factura.AgregarDetalles (servicio, Mascota);
             this.Factura.Cliente = Cliente;
             this.Factura.Empleado = Empleado;
-            Factura.Detalles = this.Detalles;            
-
+            Factura.CalcularSubtotal();
             label12.Text = Factura.SubTotal + "";
             label13.Text = Factura.Total + "";
 
@@ -169,9 +164,10 @@ namespace VeterinariaGUI
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                var Crta = this.Clientes.Buscar(textBox1.Text.Trim());
+                var Crta = this.ClienteService.Buscar(textBox1.Text.Trim());
                 if (!Crta.Error)
                 {
+                    Factura = new Factura(Crta.cliente, Empleado);
                     this.ClienteCmabiado(Crta.cliente);
                 }  
 
@@ -182,6 +178,7 @@ namespace VeterinariaGUI
         private void ClienteCmabiado(Cliente c)
         {
             this.Cliente = c;
+
             label6.Text = c.NombreCompleto();
             var i = 0;
             comboBox1.Items.Clear();
@@ -210,7 +207,7 @@ namespace VeterinariaGUI
                 if (textBox2.Text.Trim().Length < 1) textBox2.Text = "0";
                 try
                 {
-                    Factura.PcjIva = Math.Abs(Double.Parse(textBox2.Text));
+                    Factura.PcjIva = Math.Abs(decimal.Parse(textBox2.Text));
                     textBox2.Text = Factura.PcjIva + "";
                 }
                 catch (Exception)
@@ -218,9 +215,9 @@ namespace VeterinariaGUI
                     Factura.PcjIva = 0;
                     MessageBox.Show("Rectifique el descuento");
                 }
-
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
+
             }
 
         }
@@ -233,7 +230,7 @@ namespace VeterinariaGUI
                 if (textBox3.Text.Trim().Length < 1) textBox3.Text = "0";
                 try
                 {
-                    Factura.PcjGanancia = Math.Abs(Double.Parse(textBox3.Text));
+                    Factura.PcjGanancia = Math.Abs(decimal.Parse(textBox3.Text));
                     textBox3.Text = Factura.PcjGanancia + "";
                 }
                 catch (Exception)
@@ -241,9 +238,9 @@ namespace VeterinariaGUI
                     Factura.PcjGanancia = 0;
                     MessageBox.Show("Rectifique el Iva");
                 }
-
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
+
             }
         }
 
@@ -255,7 +252,7 @@ namespace VeterinariaGUI
                 if (textBox4.Text.Trim().Length < 1) textBox4.Text = "0";
                 try
                 {
-                    Factura.PcjDescuento = Math.Abs(Double.Parse(textBox4.Text));
+                    Factura.PcjDescuento = Math.Abs(decimal.Parse(textBox4.Text));
                     textBox4.Text = Factura.PcjDescuento + "";
                 }
                 catch (Exception)
@@ -263,9 +260,9 @@ namespace VeterinariaGUI
                     Factura.PcjDescuento = 0;
                     MessageBox.Show("Rectifique la ganancia");
                 }
-
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
+
             }
         }
 
@@ -274,6 +271,10 @@ namespace VeterinariaGUI
 
         }
 
-     
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuFacturasFrm menu = new MenuFacturasFrm();
+            menu.Show();
+        }
     }
 }

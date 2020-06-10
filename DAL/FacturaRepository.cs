@@ -24,7 +24,7 @@ namespace DAL
             {
                 command.CommandText = @"Insert Into Facturas (IdCliente,IdEmpleado,PcjIva,Iva,PsjDescuento,Descuento,PsjGanancia,Ganancia,NServicios,SubTotal,Total)
                                         values (@IdCliente,@IdEmpleado,@PcjIva,@Iva,@PsjDescuento,@Descuento,@PsjGanancia,@Ganancia,@NServicios,@SubTotal,@Total)";
-               
+
                 command.Parameters.AddWithValue("@IdCliente", Factura.Cliente.Identificacion);
                 command.Parameters.AddWithValue("@IdEmpleado", Factura.Empleado.Identificacion);
                 command.Parameters.AddWithValue("@PcjIva", Factura.PcjIva);
@@ -37,7 +37,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@SubTotal", Factura.SubTotal);
                 command.Parameters.AddWithValue("@Total", Factura.Total);
                 var filas = command.ExecuteNonQuery();
-            }            
+            }
         }
 
         public IList<Factura> Consultar()
@@ -45,9 +45,9 @@ namespace DAL
             SqlDataReader dataReader;
             List<Factura> facturas = new List<Factura>();
             using (var command = _connection.CreateCommand())
-            {    
+            {
                 command.CommandText = "Select * from Facturas";
-              
+
                 dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
@@ -82,7 +82,7 @@ namespace DAL
         {
             try
             {
-              SqlDataReader dataReader;
+                SqlDataReader dataReader;
                 using (var command = _connection.CreateCommand())
                 {
                     command.CommandText = "select max(Codigo) as Codigo from Facturas;";
@@ -97,7 +97,7 @@ namespace DAL
             }
         }
 
-       
+
 
         private Factura MapearFactura(SqlDataReader dataReader)
         {
@@ -107,14 +107,13 @@ namespace DAL
             Factura.Codigo = (int)dataReader["Codigo"];
             Factura.Cliente = new Cliente((string)dataReader["IdCliente"]);
             Factura.Empleado = new Empleado((string)dataReader["IdEmpleado"]);
-            Factura.PcjIva = (double)dataReader["PcjIva"];
-            Factura.PcjDescuento = (double)dataReader["PsjDescuento"];
-            Factura.PcjGanancia = (double)dataReader["PsjGanancia"];
-            return Factura; 
+            Factura.PcjIva = decimal.Parse(dataReader["PcjIva"].ToString());
+            Factura.PcjDescuento = decimal.Parse(dataReader["PsjDescuento"].ToString());
+            Factura.PcjGanancia = decimal.Parse(dataReader["PsjGanancia"].ToString());
+            Factura.SubTotal = decimal.Parse(dataReader["Subtotal"].ToString());
+            return Factura;
         }
 
+    } 
 
-       
-
-    }
 }

@@ -10,19 +10,22 @@ namespace Entity
     {   
         public int Codigo { get; set; }
         public int Factura { get; set; }
-        public Servicio Servicio { get; set; }      
+        public Servicio Servicio { get; set;}      
         public Mascota Mascota { get; set; }
-
+       
 
         public DetalleFactura(Servicio servicios, Mascota mascota)
         {
             this.Servicio = servicios;
             this.Mascota = mascota;
+            
         }
 
         public DetalleFactura()
         {
+                
         }
 
+     
     }
 }

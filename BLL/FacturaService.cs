@@ -33,15 +33,16 @@ namespace BLL
      
             try
             {
+                fact.AgregarIdFactura(Last()+1);
                 Conexion.Open();
                 
                 FacturaRepo.Guardar(fact);
-                var id = FacturaRepo.Last();
-                for (int i = 0; i < fact.Detalles.Count; i++)
+                foreach (var item in fact.ConsultarDetalles())
                 {
-                   fact.Detalles[i].Factura = id;
-                    DetalleRepo.Guardar(fact.Detalles[i]);
+                    DetalleRepo.Guardar(item);
                 }
+             
+
                 Conexion.Close();
                 return $"Se facturó";
             }
@@ -52,6 +53,17 @@ namespace BLL
             }
 
         }
+
+        public int Last() {
+
+           
+            Conexion.Open();
+
+            int LastService= FacturaRepo.Last();
+            Conexion.Close();
+            return LastService;
+           
+        }
         public Response Consultar()
         {
             Response = new Response();
@@ -61,7 +73,7 @@ namespace BLL
                 var facts = FacturaRepo.Consultar();
                 for (int i = 0; i < facts.Count; i++)
                 {
-                    facts[i].Detalles = (List<DetalleFactura>)DetalleRepo.BuscarFac(facts[i].Codigo);
+                    facts[i].AgregarDetalle((List<DetalleFactura>)DetalleRepo.BuscarFac(facts[i].Codigo));
                 }
                 Response.facturas = facts;
                 Conexion.Close();
@@ -97,8 +109,8 @@ namespace BLL
             {
                 Conexion.Open();
                 var Fac = FacturaRepo.Buscar(codigo);
-
-                Fac.Detalles = (List<DetalleFactura>)DetalleRepo.BuscarFac(Fac.Codigo);
+              
+                Fac.AgregarDetalle((List<DetalleFactura>)DetalleRepo.BuscarFac(Fac.Codigo));
                 Fac.Cliente = ClienteRepo.Buscar(Fac.Cliente.Identificacion);
                 Fac.Empleado = EmpleadoRepo.Buscar(Fac.Empleado.Identificacion);
 

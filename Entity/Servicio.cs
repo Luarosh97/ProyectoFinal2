@@ -10,7 +10,7 @@ namespace Entity
     {
         public int Codigo {get;set;}
         public string Nombre {get; set;}
-         public double Base {get;set;} 
+         public decimal Base {get;set;} 
        
   
         public Servicio()
@@ -27,14 +27,14 @@ namespace Entity
             this.Nombre = "";
            }
 
-        public Servicio(string nombre, double valor)
+        public Servicio(string nombre, decimal valor)
         { 
             this.Codigo = 0; 
             this.Nombre = nombre;
           this.Base = valor;
         }
 
-        public Servicio(int codigo, string nombre, double valor)
+        public Servicio(int codigo, string nombre, decimal valor)
         {
             this.Codigo = codigo;
             this.Nombre = nombre;

@@ -108,6 +108,7 @@ namespace DAL
         {
 
             if (!dataReader.HasRows) return null;
+           
             DetalleFactura Detalle = new DetalleFactura();
             Detalle.Codigo = (int)dataReader["Codigo"];
             Detalle.Factura = (int)dataReader["Factura"];

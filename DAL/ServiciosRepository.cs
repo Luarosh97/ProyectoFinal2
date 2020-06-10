@@ -103,7 +103,7 @@ namespace DAL
             }
         }
 
-        public double SumarValorServicios()
+        public decimal SumarValorServicios()
         {
             return ConsultarServicios().Sum(S => S.Base);
 
