@@ -22,8 +22,8 @@ namespace DAL
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = @"Insert Into Facturas (IdCliente,IdEmpleado,PcjIva,Iva,PsjDescuento,Descuento,PsjGanancia,Ganancia,NServicios,SubTotal,Total)
-                                        values (@IdCliente,@IdEmpleado,@PcjIva,@Iva,@PsjDescuento,@Descuento,@PsjGanancia,@Ganancia,@NServicios,@SubTotal,@Total)";
+                command.CommandText = @"Insert Into Facturas (IdCliente,IdEmpleado,PcjIva,Iva,PsjDescuento,Descuento,PsjGanancia,Ganancia,NServicios,SubTotal,Total,Fecha)
+                                        values (@IdCliente,@IdEmpleado,@PcjIva,@Iva,@PsjDescuento,@Descuento,@PsjGanancia,@Ganancia,@NServicios,@SubTotal,@Total,@Fecha)";
 
                 command.Parameters.AddWithValue("@IdCliente", Factura.Cliente.Identificacion);
                 command.Parameters.AddWithValue("@IdEmpleado", Factura.Empleado.Identificacion);
@@ -36,6 +36,10 @@ namespace DAL
                 command.Parameters.AddWithValue("@NServicios", Factura.NServicios);
                 command.Parameters.AddWithValue("@SubTotal", Factura.SubTotal);
                 command.Parameters.AddWithValue("@Total", Factura.Total);
+                command.Parameters.AddWithValue("@Fecha", Factura.FechaFactura);
+
+
+
                 var filas = command.ExecuteNonQuery();
             }
         }
@@ -111,6 +115,8 @@ namespace DAL
             Factura.PcjDescuento = decimal.Parse(dataReader["PsjDescuento"].ToString());
             Factura.PcjGanancia = decimal.Parse(dataReader["PsjGanancia"].ToString());
             Factura.SubTotal = decimal.Parse(dataReader["Subtotal"].ToString());
+            Factura.FechaFactura = (DateTime)dataReader["Fecha"];
+
             return Factura;
         }
 

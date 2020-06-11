@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuFacturasFrm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.TipoConsultaCmb = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +46,7 @@
             this.Nservicios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,36 +63,15 @@
             this.panel1.Size = new System.Drawing.Size(683, 399);
             this.panel1.TabIndex = 0;
             // 
-            // label2
+            // TipoConsultaCmb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(254, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 27);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Menu Facturas";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.IdCliente,
-            this.IdEmpleado,
-            this.PcjIVA,
-            this.Iva,
-            this.PcjDescuento,
-            this.Descuento,
-            this.PcjGanancia,
-            this.Ganancia,
-            this.Nservicios,
-            this.Subtotal,
-            this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(71, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 214);
-            this.dataGridView1.TabIndex = 2;
+            this.TipoConsultaCmb.FormattingEnabled = true;
+            this.TipoConsultaCmb.Items.AddRange(new object[] {
+            "Facturas"});
+            this.TipoConsultaCmb.Location = new System.Drawing.Point(333, 94);
+            this.TipoConsultaCmb.Name = "TipoConsultaCmb";
+            this.TipoConsultaCmb.Size = new System.Drawing.Size(121, 21);
+            this.TipoConsultaCmb.TabIndex = 4;
             // 
             // button1
             // 
@@ -108,15 +88,37 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TipoConsultaCmb
+            // dataGridView1
             // 
-            this.TipoConsultaCmb.FormattingEnabled = true;
-            this.TipoConsultaCmb.Items.AddRange(new object[] {
-            "Facturas"});
-            this.TipoConsultaCmb.Location = new System.Drawing.Point(333, 94);
-            this.TipoConsultaCmb.Name = "TipoConsultaCmb";
-            this.TipoConsultaCmb.Size = new System.Drawing.Size(121, 21);
-            this.TipoConsultaCmb.TabIndex = 4;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.IdCliente,
+            this.IdEmpleado,
+            this.PcjIVA,
+            this.Iva,
+            this.PcjDescuento,
+            this.Descuento,
+            this.PcjGanancia,
+            this.Ganancia,
+            this.Nservicios,
+            this.Subtotal,
+            this.Total,
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(71, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(533, 214);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(254, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 27);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Menu Facturas";
             // 
             // Codigo
             // 
@@ -178,6 +180,11 @@
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
             // MenuFacturasFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,5 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nservicios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }

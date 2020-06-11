@@ -43,7 +43,7 @@ namespace VeterinariaGUI
         {
             foreach (var item in facturas)
             {
-                dataGridView1.Rows.Add(item.Codigo,item.Cliente.Identificacion, item.Empleado.Identificacion, item.PcjIva,item.Iva,item.PcjDescuento,item.Descuento, item.PcjGanancia, item.Ganancia, item.NServicios,item.SubTotal,item.Total);
+                dataGridView1.Rows.Add(item.Codigo,item.Cliente.Identificacion, item.Empleado.Identificacion, item.PcjIva,item.Iva,item.PcjDescuento,item.Descuento, item.PcjGanancia, item.Ganancia, item.NServicios,item.SubTotal,item.Total,item.FechaFactura);
             }
 
         }

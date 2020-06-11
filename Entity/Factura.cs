@@ -26,6 +26,7 @@ namespace Entity
      
 
         public int Codigo { get; set; } 
+        public DateTime FechaFactura { get; set; }
 
         public Cliente Cliente { get; set; }
 

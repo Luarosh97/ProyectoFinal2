@@ -60,11 +60,13 @@ namespace VeterinariaGUI
         
 
         private void PreCharge()
-        {  // Hacer un servicio que consulte los valores en BD y luego se mapea esos valores en los textos
+        {  
             textBox2.Text = 19 + "";
             textBox3.Text = 30+"";
             textBox4.Text = 10 + "";
             label14.Text = this.Empleado.NombreCompleto();
+           
+
             var respuesta = this.Servicios.Consultar();
             if (respuesta.Error)
                 MessageBox.Show(respuesta.Mensaje);
@@ -153,8 +155,9 @@ namespace VeterinariaGUI
             var Mascota = this.Cliente.mascotas[comboBox1.SelectedIndex];
             Factura.AgregarDetalles (servicio, Mascota);
             this.Factura.Cliente = Cliente;
-            this.Factura.Empleado = Empleado;
+            this.Factura.Empleado= Empleado;
             Factura.CalcularSubtotal();
+            Factura.FechaFactura= DateFechaFactura.Value;
             label12.Text = Factura.SubTotal + "";
             label13.Text = Factura.Total + "";
 
@@ -164,11 +167,12 @@ namespace VeterinariaGUI
         {
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                var Crta = this.ClienteService.Buscar(textBox1.Text.Trim());
-                if (!Crta.Error)
+                var respuesta = this.ClienteService.Buscar(textBox1.Text.Trim());
+                if (!respuesta.Error)
                 {
-                    Factura = new Factura(Crta.cliente, Empleado);
-                    this.ClienteCmabiado(Crta.cliente);
+                    Factura = new Factura(respuesta.cliente, Empleado);
+                    this.ClienteCmabiado(respuesta.cliente);
+                   
                 }  
 
               
@@ -215,6 +219,7 @@ namespace VeterinariaGUI
                     Factura.PcjIva = 0;
                     MessageBox.Show("Rectifique el descuento");
                 }
+              
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
 
@@ -238,6 +243,7 @@ namespace VeterinariaGUI
                     Factura.PcjGanancia = 0;
                     MessageBox.Show("Rectifique el Iva");
                 }
+            
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
 
@@ -260,6 +266,7 @@ namespace VeterinariaGUI
                     Factura.PcjDescuento = 0;
                     MessageBox.Show("Rectifique la ganancia");
                 }
+               
                 label12.Text = Factura.SubTotal + "";
                 label13.Text = Factura.Total + "";
 
